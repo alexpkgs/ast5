@@ -1,0 +1,40 @@
+---
+import Layout from "../layouts/Layout.astro"
+---
+<Layout title="404 Not Found" description="This page does not exists">
+  <div class="div h-[75vh] w-screen flex flex-col flex-wrap gap-2 justify-center items-center">
+    <h1 class="text-fg text-5xl font-bold">404 is pretty <span class="text-primary">awkward...</span></h1>
+    <div class="flex gap-4 mt-4 items-center justify-center">
+      <h1 class="text-fg text-2xl font-light">theres nothing go back to</h1>
+            <a href="/" class="self-start text-primary text-2xl font-medium underline underline-offset-4 cursor-pointer">Go Back Home</a>
+    <div>
+  </div>
+  <style>
+    /* Reset body margin and set background color */
+    body {
+      margin: 0;
+      background-color: #000; /* Use shorthand for color */
+    }
+  
+    /* Customize anchor links */
+    a {
+      @apply text-white no-underline hover:underline; /* Ensure link color matches text and adds underline on hover */
+    }
+  
+    /* Optional: Additional styles for improved readability */
+    h1, h2, h3, h4, h5, h6 {
+      @apply text-white font-bold; /* Set headings to white and bold */
+    }
+  
+    p {
+      @apply text-gray-300; /* Lighter gray text for paragraphs for readability */
+    }
+  
+    ul {
+      @apply list-disc list-inside pl-5 text-gray-300; /* Styled lists with padding */
+    }
+  </style>
+  
+</Layout>
+<style>
+</style>
