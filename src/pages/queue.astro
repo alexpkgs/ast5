@@ -1,0 +1,87 @@
+---
+import '../styles/global3.css';  
+import Queue from './projectmdx/queue.mdx';  
+---
+
+<div class="bg-bg text-fg font-sans min-h-screen flex flex-col items-center p-4 sm:p-8">
+  <!-- Top Navigation Bar -->
+  <div class="w-full max-w-4xl flex items-center justify-between p-3 sm:p-4 bg-bg3 text-fg rounded-lg shadow-md mb-6">
+    <div class="flex items-center gap-2">
+      <img src="/face.svg" alt="Profile Icon" class="w-10 h-10 rounded-full" />
+      <span class="text-lg font-semibold">xpr</span>
+    </div>
+    <div class="flex items-center gap-3">
+      <a href="/about" class="p-2 rounded-full bg-mbg hover:bg-bright transition duration-200 flex items-center justify-center">
+        <img src="/people.svg" alt="About" class="w-6 h-6" />
+      </a>
+      <a href="https://codeberg.org/xpr/website" class="p-2 rounded-full bg-mbg hover:bg-bright transition duration-200 flex items-center justify-center">
+        <img src="/code.svg" alt="Source Code" class="w-6 h-6" />
+      </a>
+    </div>
+  </div>
+
+  <!-- Divider -->
+  <hr class="border-darker my-4 w-full max-w-4xl" />
+
+  <!-- Diagram at the top -->
+  <div class="w-full max-w-4xl flex justify-center mb-6">
+    <img src="/queric.svg" alt="Queue Diagram" class="max-w-full h-auto rounded-lg shadow-lg" />
+  </div>
+
+  <!-- Heading and Introduction -->
+  <div class="text-center w-full max-w-4xl mb-6">
+    <h2 class="text-3xl font-bold text-foreground">Queues</h2>
+    <h3 class="text-xl text-muted mt-2">Queue Data Structure (SML)</h3>
+  </div>
+
+  <!-- Content Section -->
+  <div class="w-full max-w-3xl text-bright">
+    <p class="mb-4">
+      A Queue is a linear data structure that follows the First-In-First-Out (FIFO) principle...
+    </p>
+
+    <p class="mb-4">Queues typically support several operations:</p>
+    <ul class="list-disc list-inside mb-4 pl-6 space-y-2 text-muted">
+      <li><strong>Enqueue</strong>: Add an element to the back of the queue.</li>
+      <li><strong>Dequeue</strong>: Remove and return the element from the front of the queue.</li>
+      <li><strong>Front/Peek</strong>: Get the element at the front of the queue without removing it.</li>
+      <li><strong>IsEmpty</strong>: Check if the queue is empty.</li>
+    </ul>
+
+    <p class="mb-4">Here’s a simple implementation of a queue in Standard ML (SML):</p>
+
+    <!-- Code Block -->
+    <div class="bg-surface-2 text-bright p-4 rounded-lg mb-6 overflow-x-auto shadow-lg">
+        datatype 'a queue = Queue of 'a list * 'a list
+
+        (* Create an empty queue *)
+        fun emptyQueue : 'a queue = Queue ([], [])
+        
+        (* Enqueue an element *)
+        fun enqueue (Queue (front, back), x) =
+            Queue (front, x :: back)
+        
+        (* Dequeue an element *)
+        fun dequeue (Queue ([], [])) = raise EmptyQueue
+          | dequeue (Queue (front, back)) =
+              case List.rev back of
+                  [] => raise EmptyQueue
+                | y :: ys => (y, Queue (front, ys))
+        
+        (* Peek at the front element *)
+        fun front (Queue ([], [])) = raise EmptyQueue
+          | front (Queue (front, back)) =
+              case List.rev back of
+                  [] => raise EmptyQueue
+                | y :: _ => y
+        
+        (* Check if the queue is empty *)
+        fun isEmpty (Queue ([], [])) = true
+          | isEmpty _ = false
+    </div>
+
+    <p class="text-muted">
+      This implementation defines a queue using two lists, allowing for efficient...
+    </p>
+  </div>
+</div>

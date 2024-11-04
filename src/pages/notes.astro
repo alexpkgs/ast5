@@ -1,0 +1,107 @@
+---
+const posts = [
+  { number: "1.", title: "Queue", type: "Programming Notes", date: "Nov 2 2024", description: "", link: "/queue" },
+];
+---
+
+<div class="bg-bg text-fg font-sans p-8 min-h-screen">
+  <!-- Top Navigation Bar -->
+  <div class="flex items-center justify-between p-4 bg-bg2 text-fg">
+    <div class="flex items-center gap-2">
+      <img src="/face.svg" alt="Profile Icon" class="w-10 h-10 rounded-full" />
+      <span class="text-lg">xpr</span> <!-- Add your name here -->
+    </div>
+    <div class="flex items-center gap-4">
+      <!-- About Button -->
+      <a href="/about" class="p-2 rounded-full bg-bg3 hover:bg-bg4 flex items-center justify-center">
+        <img src="/people.svg" alt="About" class="w-6 h-6" />
+      </a>
+
+      <!-- Source Button -->
+      <a href="https://codeberg.org/xpr/website" class="p-2 rounded-full bg-bg3 hover:bg-bg4 flex items-center justify-center">
+        <img src="/code.svg" alt="Source Code" class="w-6 h-6" />
+      </a>
+    </div>
+  </div>
+
+  <hr class="border-gray-800 my-6" />
+
+  <!-- Blog Posts Section -->
+  <h2 class="text-2xl font-semibold mb-4">Notes</h2>
+  {posts.map((post) => (
+    <div class="flex flex-col gap-1 mb-6" key={post.number}>
+      <div class="flex items-center gap-2">
+        <span class="text-xl font-bold text-primary">{post.number}</span>
+        <a href={post.link} class="text-xl text-fg font-semibold hover:underline" aria-label={`Read ${post.title}`}>
+          {post.title}
+        </a>
+        <span class="text-xs text-bright bg-bg3 px-2 py-1 rounded uppercase">{post.type}</span>
+        <span class="text-sm text-bright ml-auto">{post.date}</span>
+      </div>
+      <div class="text-sm text-bright">{post.description}</div>
+    </div>
+  ))}
+</div>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Google+Sans:wght@400&display=swap");
+
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+  @font-face {
+      font-family: "Geist Light";
+      src: url("/fonts/Geist-Light.ttf") format("truetype");
+      font-weight: lighter;
+      font-style: normal;
+      font-display: swap;
+  }
+
+  /* Global Font Styling */
+  * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: "Google Sans", Google Sans; /* Set default font to Google Sans with a fallback */
+  }
+
+  body {
+      color: #171717; /* shiki-color-text */
+      background-color: transparent; /* shiki-color-background */
+  }
+
+  .markdown-content {
+      @apply text-lg leading-8 mx-auto max-w-screen-md;
+  }
+
+  .markdown-content h1, .markdown-content h2, .markdown-content h3 {
+      @apply font-bold text-center;
+  }
+
+  .markdown-content h1 {
+      @apply text-3xl md:text-4xl my-4;
+  }
+
+  .markdown-content h2 {
+      @apply text-2xl md:text-3xl my-4;
+  }
+
+  .markdown-content h3 {
+      @apply md:font-normal text-xl md:text-2xl my-4;
+  }
+
+  .markdown-content p {
+      @apply my-4;
+  }
+
+  .markdown-content a {
+      @apply text-neutral-600 hover:text-neutral-900 transition;
+  }
+
+  .markdown-content img {
+      @apply my-4 rounded-xl w-full;
+  }
+
+  /* Add other styles as necessary, ensuring consistency */
+</style>

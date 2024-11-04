@@ -1,0 +1,51 @@
+---
+import '../styles/global.css';
+const posts = [
+  { number: "1.", title: "Ricing Guide", type: "guide and draft", date: "Nov 2 2024", description: "how to rice your boring linux desktop", link: "/ricing" },
+];
+---
+
+<div class="bg-bg text-fg font-sans p-8"> <!-- Using custom bg and fg colors -->
+  <div class="text-4xl font-bold mb-4">2024</div>
+  <hr class="border-gray-800 my-6" />
+  
+  <h2 class="text-2xl font-semibold mb-4">Blog Posts</h2>
+  <style>
+    /* Reset body margin and set background color */
+    body {
+      margin: 0;
+      background-color: #000; /* Use shorthand for color */
+    }
+  
+    /* Customize anchor links */
+    a {
+      @apply text-white no-underline hover:underline; /* Ensure link color matches text and adds underline on hover */
+    }
+  
+    /* Optional: Additional styles for improved readability */
+    h1, h2, h3, h4, h5, h6 {
+      @apply text-white font-bold; /* Set headings to white and bold */
+    }
+  
+    p {
+      @apply text-gray-300; /* Lighter gray text for paragraphs for readability */
+    }
+  
+    ul {
+      @apply list-disc list-inside pl-5 text-gray-300; /* Styled lists with padding */
+    }
+  </style>
+  
+  {posts.map((post) => (
+    <div class="flex flex-col gap-1 mb-6" key={post.number}>
+      <div class="flex items-center gap-2">
+        <span class="text-xl font-bold text-primary">{post.number}</span> <!-- Using custom primary color -->
+        <a href={post.link} class="text-xl text-fg font-semibold" aria-label={`Read ${post.title}`}>{post.title}</a>
+        <span class="text-xs text-bright bg-bg3 px-2 py-1 rounded uppercase">{post.type}</span> <!-- Using custom colors -->
+        <span class="text-sm text-bright ml-auto">{post.date}</span>
+      </div>
+      <div class="text-sm text-bright">{post.description}</div> <!-- Using custom bright color -->
+    </div>
+  ))}
+    </style>
+</div>

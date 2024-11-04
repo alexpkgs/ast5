@@ -1,0 +1,36 @@
+---
+// Importing MDX component and global styles
+import Example from './projectmdx/ricing.mdx';
+import '../styles/global.css';
+---
+
+<div class="p-6 bg-black text-white rounded-lg">
+  <Example />
+</div>
+
+<style>
+  /* Reset body margin and set background color */
+  body {
+    margin: 0;
+    background-color: #000; /* Use shorthand for color */
+  }
+
+  /* Customize anchor links */
+  a {
+    @apply text-white no-underline hover:underline; /* Ensure link color matches text and adds underline on hover */
+  }
+
+  /* Optional: Additional styles for improved readability */
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-white font-bold; /* Set headings to white and bold */
+  }
+
+  p {
+    @apply text-gray-300; /* Lighter gray text for paragraphs for readability */
+  }
+
+  ul {
+    @apply list-disc list-inside pl-5 text-gray-300; /* Styled lists with padding */
+  }
+</style>
+
