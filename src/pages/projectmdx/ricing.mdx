@@ -1,0 +1,125 @@
+---
+title: The Ricing Guide
+description: An Overview of how to rice, from the very beginning to the end.
+date: 2 Nov 2024
+author: xpr
+draft: false
+category: guide 
+---
+
+<div className="table-of-contents mb-6">
+    <h2 className="text-2xl font-bold mb-4">Table of Contents</h2>
+    <ul className="list-disc list-inside space-y-2">
+        <li><a href="#introduction" className="text-white-500 hover:underline">Introduction</a></li>
+        <li><a href="#choosing-a-window-manager" className="text-white-500 hover:underline">Choosing a Window Manager</a></li>
+        <li><a href="#terminals" className="text-white-500 hover:underline">Terminals</a></li>
+        <li><a href="#colorschemes" className="text-white-500 hover:underline">Colorschemes</a></li>
+        <li><a href="#wallpapers" className="text-white-500 hover:underline">Wallpapers</a></li>
+        <li><a href="#compositing" className="text-white-500 hover:underline">Compositing</a></li>
+        <li><a href="#some-good-dotfile-repos-and-resources" className="text-white-500 hover:underline">Good Dotfile Repos and Resources</a></li>
+    </ul>
+</div>
+
+<section id="introduction" className="mb-6">
+    <h3 className="text-xl font-semibold mb-2">Introduction</h3>
+    <p>
+        Ricing is the term commonly used for customizing your desktop’s appearance to look clean and stylish. If you're wondering how to turn your boring-looking desktop into a visually appealing setup, this guide is for you!
+    </p>
+</section>
+
+<section id="choosing-a-window-manager" className="mb-6">
+    <h3 className="text-xl font-semibold mb-2">Choosing a Window Manager</h3>
+    <p>
+        A window manager (WM) is software that controls the placement and appearance of application windows in a graphical interface. Unlike a desktop environment (DE) that provides a full user experience with panels, system trays, and menus, a window manager focuses on basic window operations like moving, resizing, minimizing, and maximizing windows. In Wayland, a WM is often referred to as a "compositor" as it also handles window rendering.
+    </p>
+    <p>
+        Linux has two main display protocols: Wayland and X11 (Xorg). Wayland, the more modern protocol, aims for simplicity, efficiency, and improved security by enabling direct communication between applications and the display server. X11, on the other hand, uses a client-server model that can add latency and complexity but remains widely used due to its compatibility with older applications.
+    </p>
+</section>
+
+<section id="xorg" className="mb-6">
+    <h3 className="text-xl font-semibold mb-2">Xorg</h3>
+    <div className="space-y-4">
+        <p>
+            1. <a href="https://awesomewm.org/" className="font-medium">Awesome</a>: Known as one of the most powerful Xorg window managers, AwesomeWM includes a built-in bar, system tray, app menu, context menu, and various layouts. With Lua scripting support, it offers extensive customization and additional community modules like "bling" and "rubato" for even more functionality. Some Lua knowledge is required to maximize its potential.
+        </p>
+        <p>
+            2. <a href="https://github.com/baskerville/bspwm" className="font-medium">bspwm</a>: A beginner-friendly window manager that uses binary space partitions to create a clean and intuitive workspace. bspwm offers a lightweight experience focused on functionality and minimal distractions.
+        </p>
+        <p>
+            3. <a href="https://dwm.suckless.org/" className="font-medium">DWM</a>: Adheres to the <span className="bg-yellow-300 text-black font-semibold rounded px-1">suckless philosophy,</span> focusing on minimalism. Customization in DWM requires modifying the <span className="bg-yellow-300 text-black font-semibold rounded px-1">source code</span> and applying patches, making it a better fit for those with coding experience.
+        </p>
+    </div>
+</section>
+
+<section id="wayland" className="mb-6">
+    <h3 className="text-xl font-semibold mb-2">Wayland</h3>
+    <div className="space-y-4">
+        <p>
+            1. <a href="https://swaywm.org/" className="font-medium">Sway</a>: A popular Wayland-compatible window manager that replicates the functionality and feel of i3, but does not add any unique features. It offers a customizable tiling window experience while focusing on security and modern features.
+        </p>
+        <p>
+            2. <a href="https://github.com/swaywm/swayfx" className="font-medium">SwayFX</a>: An enhanced fork of Sway that introduces visual enhancements like anti-aliased rounded corners, window blurring, shadows, and dimming for unfocused windows. It allows for per-application saturation control and provides fade and window animations.
+        </p>
+        <p>
+            3. <a href="https://hyprland.org/" className="font-medium">Hyprland</a>: A popular Wayland compositor known for being lightweight and highly configurable. It offers smooth window transitions, workspace switching, and supports various community plugins for enhanced visual effects.
+        </p>
+    </div>
+</section>
+
+<section id="terminals" className="mb-6">
+    <h3 className="text-xl font-semibold mb-2">Terminals</h3>
+    <ul className="list-disc list-inside space-y-2">
+        <li><a href="https://wezfurlong.org/wezterm/" className="font-medium">WezTerm</a></li>
+        <li><a href="https://alacritty.org/" className="font-medium">Alacritty</a></li>
+        <li><a href="https://terminal.sexy/" className="font-medium">Tym Terminal</a></li>
+    </ul>
+</section>
+
+<section id="colorschemes" className="mb-6">
+    <h3 className="text-xl font-semibold mb-2">Colorschemes</h3>
+    <p>
+        A good colorscheme can enhance your desktop's aesthetic and improve readability. Some popular ones include:
+        <ul className="list-disc list-inside space-y-2">
+            <li><a href="https://github.com/vinceliuice/WhiteSur-gtk-theme" className="font-medium">WhiteSur GTK Theme</a></li>
+            <li><a href="https://github.com/edvin/tokyo-night-vscode-theme" className="font-medium">Tokyo Night Theme</a></li>
+            <li><a href="https://github.com/arc-en-ciel/arc-theme" className="font-medium">Arc Theme</a></li>
+        </ul>
+    </p>
+</section>
+
+<section id="wallpapers" className="mb-6">
+    <h3 className="text-xl font-semibold mb-2">Wallpapers</h3>
+    <p>
+        A visually appealing wallpaper can tie together your ricing. Consider using:
+        <ul className="list-disc list-inside space-y-2">
+            <li><a href="https://wallhaven.cc/" className="font-medium">Wallhaven</a></li>
+            <li><a href="https://unsplash.com/" className="font-medium">Unsplash</a></li>
+            <li><a href="https://pexels.com/" className="font-medium">Pexels</a></li>
+        </ul>
+    </p>
+</section>
+
+<section id="compositing" className="mb-6">
+    <h3 className="text-xl font-semibold mb-2">Compositing</h3>
+    <p>
+        A compositor can enhance the aesthetics of your setup. Popular options include:
+        <ul className="list-disc list-inside space-y-2">
+            <li><a href="https://github.com/compton/compton" className="font-medium">Compton</a></li>
+            <li><a href="https://github.com/yshui/picom" className="font-medium">Picom</a></li>
+        </ul>
+    </p>
+</section>
+
+<section id="some-good-dotfile-repos-and-resources" className="mb-6">
+    <h3 className="text-xl font-semibold mb-2">Good Dotfile Repos and Resources</h3>
+    <p>
+        To help you get started, here are some resources and dotfile repositories that can inspire your customization journey.
+    </p>
+    <p align="center">
+        <a href="https://codeberg.org/xpr/dotfiles">xprshd/dots at nixos</a>
+    </p>
+    <p align="center">
+        <img src="/public/rice.png" alt="xpr/mix" className="rounded" />
+    </p>
+</section>
