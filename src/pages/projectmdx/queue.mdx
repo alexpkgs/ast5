@@ -1,0 +1,44 @@
+# Queue Diagram
+
+## Queues
+
+A Queue is a linear data structure that follows the First-In-First-Out (FIFO) principle.
+
+Queues typically support several operations:
+
+- **Enqueue**: Add an element to the back of the queue.
+- **Dequeue**: Remove and return the element from the front of the queue.
+- **Front/Peek**: Get the element at the front of the queue without removing it.
+- **IsEmpty**: Check if the queue is empty.
+
+## Implementation of a Queue in Standard ML (SML)
+
+Here’s a simple implementation of a queue in SML:
+
+```sml
+datatype 'a queue = Queue of 'a list * 'a list
+
+(* Create an empty queue *)
+fun emptyQueue : 'a queue = Queue ([], [])
+
+(* Enqueue an element *)
+fun enqueue (Queue (front, back), x) = Queue (front, x :: back)
+
+(* Dequeue an element *)
+fun dequeue (Queue ([], [])) = raise EmptyQueue
+  | dequeue (Queue (front, back)) =
+      case List.rev back of
+        [] => raise EmptyQueue
+      | y :: ys => (y, Queue (front, ys))
+
+(* Peek at the front element *)
+fun front (Queue ([], [])) = raise EmptyQueue
+  | front (Queue (front, back)) =
+      case List.rev back of
+        [] => raise EmptyQueue
+      | y :: _ => y
+
+(* Check if the queue is empty *)
+fun isEmpty (Queue ([], [])) = true
+  | isEmpty _ = false
+```
