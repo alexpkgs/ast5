@@ -4,7 +4,11 @@ import mdx from '@astrojs/mdx';
 
 import tailwind from '@astrojs/tailwind';
 
+import svelte from '@astrojs/svelte';
+
+import vue from '@astrojs/vue';
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [mdx(), tailwind()]
+  integrations: [mdx(), tailwind(), svelte(), vue()]
 });
